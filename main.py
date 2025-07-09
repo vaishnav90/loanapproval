@@ -46,7 +46,7 @@ preprocessor = ColumnTransformer(
         ('cat', categorical_transformer, categorical_cols)
     ])
 
-#TTS
+# TTS
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, 
     test_size=0.2, 
@@ -71,7 +71,7 @@ print(f"Accuracy: {accuracy_score(y_test, dt_pred):.4f}")
 print(f"ROC AUC: {roc_auc_score(y_test, dt_pred):.4f}")
 print(f"F1 Score: {f1_score(y_test, dt_pred):.4f}")
 
-#random forest
+# random forest
 rf_pipeline = Pipeline(steps=[
     ('preprocessor', preprocessor),
     ('classifier', RandomForestClassifier(random_state=42))
